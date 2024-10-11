@@ -1,0 +1,133 @@
+/* Grundlegende Reset für einheitliches Verhalten */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body-Styling */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #9face6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+/* Video-Container */
+.video-wrapper {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Video-Styling */
+video {
+    width: 100%;
+    height: auto;
+    border-bottom: 5px solid #74ebd5;
+}
+
+/* Text-Styling */
+h1 {
+    font-size: 24px;
+    margin: 20px 0;
+    text-transform: uppercase;
+    color: #444;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 0 20px;
+}
+
+/* Infobox-Styling */
+.video-info {
+    padding: 15px 20px;
+}
+
+/* Button-Styling */
+.btn, .fullscreen-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 30px;
+    background-color: #9face6;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn:hover, .fullscreen-btn:hover {
+    background-color: #74ebd5;
+    transform: translateY(-3px);
+}
+
+/* Responsives Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .btn, .fullscreen-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .video-wrapper {
+        max-width: 100%;
+        padding: 10px;
+        box-shadow: none;
+        border-radius: 10px;
+    }
+
+    body {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    .btn, .fullscreen-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .video-wrapper {
+        padding: 5px;
+        box-shadow: none;
+        border-radius: 8px;
+    }
+
+    video {
+        border-bottom: 3px solid #74ebd5;
+    }
+
+    body {
+        padding: 5px;
+    }
+}

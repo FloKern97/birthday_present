@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsiver Video Player</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+<div class="video-wrapper">
+    <video id="videoPlayer" controls>
+        <source src="./ressources/AC_DC - Touch Too Much 2024-10-11 16-52-03.mp4" type="video/mp4">
+        Dein Browser unterstützt das Video-Tag nicht.
+    </video>
+
+    <div class="video-info">
+        <h1>Wir haben dich lieb, Oma!</h1>
+        <p>Dieses Video von uns ist für dich und wir hoffen es gefällt dir.</p>
+        <p>Alles Gute zum Geburtstag!</p>
+        <button class="fullscreen-btn" onclick="toggleFullScreen()">Vollbildmodus</button>
+    </div>
+</div>
+
+<script>
+    // Funktion zum Umschalten des Vollbildmodus
+    function toggleFullScreen() {
+        const videoContainer = document.getElementById('videoPlayer');
+        
+        if (!document.fullscreenElement) {
+            if (videoContainer.requestFullscreen) {
+                videoContainer.requestFullscreen();
+                // Firefox
+            } else if (videoContainer.mozRequestFullScreen) { 
+                videoContainer.mozRequestFullScreen();
+                // Chrome, Safari und Opera
+            } else if (videoContainer.webkitRequestFullscreen) { 
+                videoContainer.webkitRequestFullscreen();
+                // IE/Edge
+            } else if (videoContainer.msRequestFullscreen) { 
+                videoContainer.msRequestFullscreen();
+            }
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
