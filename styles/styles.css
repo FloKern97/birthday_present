@@ -19,6 +19,8 @@ body {
 
 /* Video-Container */
 .video-wrapper {
+    display: flex;
+    flex-direction: column; /* Flexibles Layout: Video und Info übereinander */
     background-color: black; /* Schwarze Hintergrundfarbe nur für den Videobereich */
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -33,7 +35,7 @@ body {
 video {
     width: 100%;
     height: auto;
-    max-height: 90vh; /* Maximale Höhe verhindern, dass Seite zu lang wird */
+    max-height: 60vh; /* Maximale Höhe des Videos reduzieren */
     object-fit: contain; /* Passt Video proportional an den Container an */
     background-color: black; /* Schwarze Farbe für den Video-Hintergrund */
 }
@@ -43,6 +45,8 @@ video {
     padding: 15px 20px;
     background-color: white; /* Weißer Hintergrund für den Beschreibungsteil */
     color: #333; /* Dunkle Schrift */
+    flex-shrink: 0; /* Verhindert, dass der Info-Container verkleinert wird */
+    min-height: 100px; /* Sicherstellen, dass der Info-Bereich sichtbar bleibt */
 }
 
 /* Text-Styling */
@@ -60,27 +64,6 @@ p {
     padding: 0 20px;
 }
 
-/* Button-Styling */
-.btn, .fullscreen-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 10px;
-    border-radius: 30px;
-    background-color: #9face6;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-.btn:hover, .fullscreen-btn:hover {
-    background-color: #74ebd5;
-    transform: translateY(-3px);
-}
-
 /* Responsives Design */
 @media (max-width: 768px) {
     h1 {
@@ -91,17 +74,16 @@ p {
         font-size: 14px;
     }
 
-    .btn, .fullscreen-btn {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
-
     .video-wrapper {
         max-width: 100%;
         padding: 10px;
         box-shadow: none;
         border-radius: 10px;
         max-height: 80vh; /* Maximalhöhe für kleinere Geräte */
+    }
+
+    video {
+        max-height: 50vh; /* Maximalhöhe für das Video reduzieren */
     }
 
     body {
@@ -118,11 +100,6 @@ p {
         font-size: 12px;
     }
 
-    .btn, .fullscreen-btn {
-        padding: 6px 12px;
-        font-size: 12px;
-    }
-
     .video-wrapper {
         padding: 5px;
         box-shadow: none;
@@ -131,8 +108,7 @@ p {
     }
 
     video {
-        border-bottom: 3px solid #74ebd5;
-        max-height: 70vh; /* Maximale Höhe für Video verhindern */
+        max-height: 50vh; /* Maximalhöhe für Video reduzieren */
     }
 
     body {
